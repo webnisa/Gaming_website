@@ -14,7 +14,6 @@ const gamesController = require("./controller/gamesController");
 const session = require("express-session");
 
 
-
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
