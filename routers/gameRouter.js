@@ -8,5 +8,4 @@ const gamesController = require("../controller/gamesController");
 
 games.get("/:gameId", isLoggedIn, gamesController.games)
 
-
 module.exports = games;
