@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #da0d74, #ffcce5);
+}
+h1{
+  font-size: 55px;
+  font-weight: 700;
+  margin: 30px;
+  color: #430122;
+}
+
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  perspective: 1000px;
+}
+
+
+.cards {
+  height: 100%;
+  width: 100%;
+  list-style-type: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cards .card {
+  cursor: pointer;
+  height: calc(100%/4 - 10px);
+  width: calc(100%/4 - 10px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
+  background-color: #ffc5e2;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cards,
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  background-color: #ffc5e2;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.view {
+  position: absolute;
+  backface-visibility: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.front-view {
+  /* display: none; */
+  font-size: 3rem;
+  color: #75083f;
+}
+
+.card .back-view img {
+  max-width: 45px;
+}
+
+.back-view {
+  /* display: none; */
+  transform: rotateY(180deg);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.shake{
+  animation: shake 0.2s ease-in-out;
+}
+
+@keyframes shake{
+   0%{
+      transform: rotateY(180deg) translateX(0);
+   }
+
+   25%{
+      transform: rotateY(180deg) translateX(-9px);
+   }
+
+   50%{
+      transform: rotateY(180deg) translateX(9px);
+   }
+
+   75%{
+      transform: rotateY(180deg) translateX(-5px);
+   }
+
+   100%{
+      transform: rotateY(180deg) translateX(0);
+   }
+}

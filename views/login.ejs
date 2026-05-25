@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Login form</title>
+</head>
+
+<body>
+        <div class="main-box">
+
+            <h1>LOGIN</h1> 
+            <form action="/user/login" method="post">
+            <div class="box">
+                <input type="email" class="email" placeholder="Email" name="emailId">
+                <i class="fa-solid fa-envelope fa-flip" style="color: white;"></i>
+            </div>
+
+            <div class="line"></div>
+
+
+           
+                <div class="box">
+
+                    <input type="password" class="password" placeholder="Password" name="password">
+                    <i class="fa-solid fa-lock" style="color: white;"></i>
+
+                </div>
+
+                <div class="line"></div>
+
+                <a href="" class="forgot">Forgot Password</a>
+
+                <button type="submit" class="login-button">LOGIN</button>
+            </form>
+            <a href="/user/signin" class="resi">Don't have an account ?</a>
+            <a href="/user/signin" class="resi">Register</a>
+        </div>
+</body>
+
+</html>

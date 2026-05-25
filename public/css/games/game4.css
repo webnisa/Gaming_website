@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+body {
+  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:"Edu NSW ACT Cursive", cursive;
+  background-color: wheat;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+p{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#scoreBox{
+  display: flex;
+  justify-content: center;
+  align-items:center ;
+  gap: 10px;
+}
+
+#mbox {
+  height: 490px;
+  width: 490px;
+  /* border: 2px solid black; */
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 15px;
+  background-color: wheat;
+}
+
+.sbox {
+  width: 150px;
+  height: 150px;
+  background-color: wheat;
+  position: relative;
+  overflow: hidden;
+}
+
+.sbox::after{
+  content: "";
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: url(../../image/holeimgcuted.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  z-index: 2;
+  pointer-events:none;
+}
+
+
+.mole{
+  width:100px;
+  height:100px;
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:20px;
+  z-index:1;
+
+  animation:popup 2s infinite;
+
+  background-image: url(../../image/mole-head.png);
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+
+  animation:popup 2s infinite;
+}
+
+@keyframes popup {
+  
+  0%{
+    transform:translateX(-50%) translateY(100px);
+  }
+
+  50%{
+    transform:translateX(-50%) translateY(0);
+  }
+
+  100%{
+    transform:translateX(-50%) translateY(100px);
+  }
+}
+
+#restBtn{
+  height: 40px;
+  width: 100px;
+  color: white;
+  background-color: rgb(242, 25, 25);
+  border: none;
+  border-radius: 7px;
+  display:block;
+  margin:auto;
+  padding: 3px;
+}
+
+#start{
+  height: 40px;
+  width: 100px;
+  color: white;
+  background-color: rgb(72, 242, 25);
+  border: none;
+  border-radius: 7px;
+  display:block;
+  margin:auto;
+  /* background-color: darkgreen; */
+}
