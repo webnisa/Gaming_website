@@ -1,6 +1,6 @@
 const express = require("express");
 const games = express.Router();
-const isLoggedIn = require("../middleware/auth");
+const isLoggedIn = require("../Middleware/auth");
 
 const path = require("path");
 
