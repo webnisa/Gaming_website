@@ -29,7 +29,9 @@ app.use(session({
 }));
 // app.use(userRouter);
 // // app.use(gamesRouter);
-
+app.get("/", (req, res) => {
+  res.redirect("/home");
+});
 app.use("/home",gamesController.home);
 app.use("/user", userRouter);
 app.use("/games", gamesRouter);
