@@ -32,72 +32,123 @@
                 <input type="text" class="my-input" placeholder=" Search Here">
 
                 <<div class="search-area">
-                </div> --> 
+                </div> -->
 
 
             </div>
 
             <div class="nav-box-right">
-           <% if(isLoggedIn){ %>
+                <% if(isLoggedIn){ %>
 
-    <div class="nav-box-right">
+                    <div class="nav-box-right">
 
-        <div class="nav-box-name">
+                        <div class="nav-box-name">
 
-            Welcome<br>
-             <%= user.name %>
+                            Welcome<br>
+                            <%= user.name %>
 
-        </div>
+                        </div>
 
-    </div>
+                    </div>
 
-    <a href="/user/logout">
+                    <a href="/user/logout">
 
-        <div class="login nav-box">
+                        <div class="login nav-box">
+                            Logout
+                        </div>
 
-            Logout
+                    </a>
 
-        </div>
+                    <% } else { %>
 
-    </a>
+                        <div class="nav-box-right">
 
-<% } else { %>
+                            <a href="/user/signin" class="sign-in-a">
 
-    <div class="nav-box-right">
+                                <div class="sign-in nav-box">
 
-        <a href="/user/signin" class="sign-in-a">
+                                    <i class="fa-solid fa-right-to-bracket"></i>
 
-            <div class="sign-in nav-box">
+                                    Sign-In
 
-                <i class="fa-solid fa-right-to-bracket"></i>
+                                </div>
 
-                Sign-In
+                            </a>
 
+                        </div>
+
+                        <a href="/user/login">
+
+                            <div class="login nav-box">
+
+                                Login
+
+                            </div>
+
+                        </a>
+                        <% } %>
             </div>
 
-        </a>
-
-    </div>
-
-    <a href="/user/login">
-
-        <div class="login nav-box">
-
-            Login
-
-        </div>
-
-    </a>
-
-<% } %>
+            <div class="menuBtn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
             </div>
+            <div class="hiddenBox" id="hiddenBox">
+                <div class="innerHiddenBox">
+                    <% if(isLoggedIn){ %>
 
+                        <div class="innerHiddenBox">
+
+                            <div class="nav-box-name">
+
+                                Welcome<br>
+                                <%= user.name %>
+
+                            </div>
+
+                        </div>
+
+                        <a href="/user/logout">
+
+                            <div class="login nav-box">
+                                Logout
+                            </div>
+
+                        </a>
+
+                        <% } else { %>
+
+                            <div class="innerHiddenBox">
+
+                                <a href="/user/signin" class="sign-in-a">
+
+                                    <div class="sign-in nav-box">
+
+                                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                                        Sign-In
+
+                                    </div>
+
+                                </a>
+
+                            </div>
+
+                            <a href="/user/login">
+
+                                <div class="login nav-box">
+
+                                    Login
+
+                                </div>
+
+                            </a>
+                            <% } %>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
-
-        <line width="10px" height="20px"></line>
 
         <div class="wheel-container">
             <div class="wheel" id="wheel">
@@ -134,21 +185,7 @@
     <footer>
 
     </footer>
-    <script>
-        const items = document.querySelectorAll(".item");
-        const wheel = document.querySelector(".wheel");
-
-        items.forEach((item) => {
-            item.addEventListener("mouseenter", () => {
-                wheel.style.animationPlayState = "paused";
-            })
-
-            item.addEventListener("mouseleave", () => {
-                wheel.style.animationPlayState = "running"
-            })
-        })
-    </script>
-    <!-- <script src="/home.js"></script> -->
+    <script src="/home.js"></script>
 </body>
 
 </html>

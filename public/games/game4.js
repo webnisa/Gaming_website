@@ -46,7 +46,6 @@ const getMole = () => {
     hole.classList.remove("mole");
   });
   moleBox[randomHole()].classList.add("mole");
-
 }
 
 

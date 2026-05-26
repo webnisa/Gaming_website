@@ -32,7 +32,6 @@ body{
     padding: 20px;
     gap: 20px;
     border-radius: 15px;
-    
 }
 
 .box{
@@ -47,6 +46,20 @@ body{
     font-size: 140px;
     text-align: center;
     font-weight: 450;
+}
+
+@media (max-width : 600px) {
+    #mbox{
+        width: 360px;
+        height :auto;
+        padding: 15px;
+        gap: 15px;
+       }
+    .box{
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+    }   
 }
 
 #reset-btn{

@@ -39,13 +39,13 @@ gameArea.innerHTML = ` <div class="container">
     <audio data-key="75" src="/audio/tink.wav"></audio>
     <audio data-key="76" src="/audio/tom.wav"></audio>`;
 
-function playsound(e) {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`.box[data-key="${e.keyCode}"]`);
+function playsound(keyCode) {
+    const audio = document.querySelector(`audio[data-key="${keyCode}"]`);
+    const key = document.querySelector(`.box[data-key="${keyCode}"]`);
 
     if (!audio) {
         return;
-    }; 
+    };
 
     audio.currentTime = 0;
     audio.play();
@@ -66,5 +66,16 @@ keys.forEach((key) => {
 });
 
 
-window.addEventListener("keydown", playsound);
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+    box.addEventListener("click", ()=>{
+        const keyCode = box.getAttribute("data-key");
+        playsound(keyCode);
+    })
+});
+
+window.addEventListener("keydown",(e)=>{
+    playsound(e.keyCode);
+} );
 

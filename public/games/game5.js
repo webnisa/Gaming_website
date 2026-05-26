@@ -15,7 +15,15 @@ gameArea.innerHTML =
 
     <div id="board"></div>
 
-  </div>`;
+  </div>
+
+  <div class="clickBtnBox">
+  <buttton class="clickBtn"><i class="fa-solid fa-arrow-up-long" style="color: white"></i></buttton>
+  <buttton class="clickBtn"><i class="fa-solid fa-arrow-right" style="color:white;"></i></buttton>
+  <buttton class="clickBtn"><i class="fa-solid fa-arrow-down-long" style="color: white;"></i></buttton>
+  <buttton class="clickBtn"><i class="fa-solid fa-arrow-left" style="color: white;"></i></buttton>
+</div>`
+  ;
 
 
 const score = document.getElementById("score");
@@ -110,6 +118,28 @@ const getFood = () => {
 
 
 
+
+
+
+const clickBtns = document.querySelectorAll(".clickBtn");
+
+clickBtns.forEach((btn)=>{
+  btn.addEventListener("click", (e)=>{
+    const btnClass = e.currentTarget.firstElementChild.classList[1];
+
+    if(btnClass.includes("arrow-up")) {
+      changePosition({key: "ArrowUp"});
+    } else if(btnClass.includes("arrow-down")) {
+      changePosition({key: "ArrowDown"});
+    } else if(btnClass.includes("arrow-left")) {
+      changePosition({key: "ArrowLeft"});
+    } else if(btnClass.includes("arrow-right")) {
+      changePosition({key: "ArrowRight"});
+    }
+  });
+});
+
 createFood();
 setIntervalValid =  setInterval(getFood, 125);
+document.addEventListener("click", changePosition);
 document.addEventListener("keydown", changePosition);

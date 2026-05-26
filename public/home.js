@@ -10,3 +10,10 @@ items.forEach((item)=>{
     wheel.style.animationPlayState = "running"
   })
 })
+
+
+const menuBtn = document.getElementById("menuBtn");
+const hiddenBox = document.getElementById("hiddenBox");
+menuBtn.addEventListener("click", ()=>{
+  hiddenBox.classList.toggle("show");
+})
